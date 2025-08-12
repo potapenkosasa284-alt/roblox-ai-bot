@@ -1,11 +1,11 @@
-import expressimport express from "express";
+import express from "express";
 import dotenv from "dotenv";
 import OpenAI from "openai";
 
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // важливо для Render
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
